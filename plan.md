@@ -66,7 +66,7 @@
 - [x] Add permission_handler package
 - [x] Add microphone permission to Info.plist
 - [x] Configure iOS Podfile with PERMISSION_MICROPHONE=1 preprocessor definition
-- [ ] Run pod install to apply iOS permission configuration (requires CocoaPods)
+- [x] Run pod install to apply iOS permission configuration (requires CocoaPods)
 - [x] Create permission request flow on app startup
 - [x] Add speech recognition permission to Info.plist and Podfile
 - [x] Request both microphone and speech recognition permissions together in the PermissionService, only return true if they are both granted
