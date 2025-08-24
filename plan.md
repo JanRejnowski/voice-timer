@@ -63,18 +63,18 @@
 
 ### 7. Set up iOS permissions
 
-- [ ] Add permission_handler package (temporarily disabled - requires CocoaPods)
+- [x] Add permission_handler package
 - [x] Add microphone permission to Info.plist
-- [x] Configure iOS Podfile with PERMISSION_MICROPHONE=1 preprocessor definition (will need pod install when CocoaPods available)
+- [x] Configure iOS Podfile with PERMISSION_MICROPHONE=1 preprocessor definition
 - [ ] Run pod install to apply iOS permission configuration (requires CocoaPods)
-- [ ] Create permission request flow on app startup (temporarily disabled - requires CocoaPods)
+- [x] Create permission request flow on app startup
 - [x] Add speech recognition permission to Info.plist and Podfile
-- [ ] Request both microphone and speech recognition permissions together in the PermissionService, only return true if they are both granted (temporarily disabled - requires CocoaPods)
-- [ ] If permissions are denied, show an alert dialog with instructions and "Cancel" and "Open Settings" buttons (temporarily disabled - requires CocoaPods)
+- [x] Request both microphone and speech recognition permissions together in the PermissionService, only return true if they are both granted
+- [x] If permissions are denied, show an alert dialog with instructions and "Cancel" and "Open Settings" buttons
 
 ### 8. Implement voice recognition
 
-- [ ] Add speech_to_text package to pubspec.yaml dependencies (temporarily disabled - requires CocoaPods)
+- [x] Add speech_to_text package to pubspec.yaml dependencies
 - [ ] Create `VoiceCommandService` in `lib/core/services/voice_command_service.dart` with:
   - [ ] Stateless service with initialize method taking onStatus/onError callbacks
   - [ ] TimerCommand enum for start/stop commands
@@ -91,7 +91,7 @@
 
 ### 9. Add audio feedback
 
-- [ ] Add audioplayers package (temporarily disabled - requires CocoaPods)
+- [x] Add audioplayers package
 - [ ] Create `AudioService` to play beep sound
 - [ ] Trigger beep when voice command recognized
 
@@ -99,9 +99,9 @@
 
 ### 10. Handle permission denial
 
-- [x] Show appropriate UI when permissions denied (implemented but temporarily disabled - requires CocoaPods to test)
-- [x] Disable voice features gracefully (implemented but temporarily disabled - requires CocoaPods to test)  
-- [x] Maintain manual-only mode functionality (working - core timer works without voice features)
+- [x] Show appropriate UI when permissions denied
+- [x] Disable voice features gracefully
+- [x] Maintain manual-only mode functionality
 
 ### 11. Testing and refinement
 

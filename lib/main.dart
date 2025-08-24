@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'core/theme/app_theme.dart';
 import 'features/timer/timer_page.dart';
+import 'core/services/permission_service.dart';
 
 void main() {
   runApp(const MainApp());
@@ -14,7 +15,46 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: 'Voice Timer',
       theme: AppTheme.darkTheme,
-      home: const TimerPage(voiceEnabled: false), // Testing with voice disabled
+      home: const PermissionWrapper(),
     );
+  }
+}
+
+class PermissionWrapper extends StatefulWidget {
+  const PermissionWrapper({super.key});
+
+  @override
+  State<PermissionWrapper> createState() => _PermissionWrapperState();
+}
+
+class _PermissionWrapperState extends State<PermissionWrapper> {
+  bool _permissionsGranted = false;
+  bool _permissionsChecked = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _requestPermissions();
+  }
+
+  Future<void> _requestPermissions() async {
+    final granted = await PermissionService.requestVoicePermissions(context);
+    setState(() {
+      _permissionsGranted = granted;
+      _permissionsChecked = true;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (!_permissionsChecked) {
+      return const Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    }
+
+    return TimerPage(voiceEnabled: _permissionsGranted);
   }
 }
