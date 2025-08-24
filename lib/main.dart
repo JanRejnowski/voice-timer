@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'core/theme/app_theme.dart';
+import 'features/timer/timer_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,12 +11,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp(
+      title: 'Voice Timer',
+      theme: AppTheme.darkTheme,
+      home: const TimerPage(voiceEnabled: false), // Testing with voice disabled
     );
   }
 }
