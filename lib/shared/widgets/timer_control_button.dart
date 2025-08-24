@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../core/constants/dimensions.dart';
 
 class TimerControlButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -20,8 +21,8 @@ class TimerControlButton extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(
-          width: 80,
-          height: 80,
+          width: AppDimensions.buttonSize,
+          height: AppDimensions.buttonSize,
           child: filled
               ? ElevatedButton(
                   onPressed: onPressed,
@@ -33,7 +34,7 @@ class TimerControlButton extends StatelessWidget {
                   ),
                   child: Icon(
                     icon,
-                    size: 32,
+                    size: AppDimensions.iconSize,
                   ),
                 )
               : OutlinedButton(
@@ -42,18 +43,18 @@ class TimerControlButton extends StatelessWidget {
                     foregroundColor: Theme.of(context).colorScheme.primary,
                     side: BorderSide(
                       color: Theme.of(context).colorScheme.primary,
-                      width: 2,
+                      width: AppDimensions.borderWidth,
                     ),
                     shape: const CircleBorder(),
                     padding: EdgeInsets.zero,
                   ),
                   child: Icon(
                     icon,
-                    size: 32,
+                    size: AppDimensions.iconSize,
                   ),
                 ),
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: AppDimensions.spacingSmall),
         Text(
           label,
           style: Theme.of(context).textTheme.labelMedium?.copyWith(
