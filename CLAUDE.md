@@ -65,17 +65,22 @@ Create a proper separation of concerns with the following structure:
 - Use flex values in Rows/Columns for responsive design
 - Define theme properties in MaterialApp's theme rather than hardcoding
 - Extract reusable widgets into separate files with clear responsibilities
-- Use constants from `AppDimensions` and `AppStrings` instead of magic numbers/strings
+- Use constants from `AppDimensions`, `AppStrings`, and `AppColors` instead of magic numbers/strings/colors
 - Prefer stateless widgets when possible; use controllers for complex state management
+- Extract complex layouts into dedicated widget components (e.g., `TimerControlsSection`)
 
 ### Code Style
 
 - Use `log` from `dart:developer` for logging (not `print` or `debugPrint`)
 - Follow Flutter's linting rules defined in `analysis_options.yaml`
-- Use constants from `lib/core/constants/` instead of hardcoding dimensions, strings, or colors
+- **NEVER hardcode values** - always use constants from `lib/core/constants/`
+- All dimensions must be defined in `AppDimensions`
+- All strings must be defined in `AppStrings`  
+- All colors must be defined in `AppColors`
 - Extract utility functions to `lib/core/utils/` for reusability
 - Use `ChangeNotifier`-based controllers for state management when `setState` becomes insufficient
 - Import paths should be relative within features, absolute for core/shared dependencies
+- Use `@immutable` annotation for constant classes
 
 ## Assets
 

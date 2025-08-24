@@ -12,8 +12,9 @@ class AppStrings {
   static const String reset = 'RESET';
   
   // Voice status
-  static const String voiceReady = 'Voice Ready';
-  static const String voiceDisabled = 'Voice Disabled';
+  static const String voiceReady = 'VOICE READY';
+  static const String voiceListening = 'LISTENING...';
+  static const String voiceDisabled = 'VOICE DISABLED';
   
   // Permission dialog
   static const String permissionsRequired = 'Permissions Required';

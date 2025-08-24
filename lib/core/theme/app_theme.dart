@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
+import '../constants/dimensions.dart';
 
 class AppTheme {
   static ThemeData get darkTheme {
@@ -69,7 +70,7 @@ class AppTheme {
           backgroundColor: AppColors.primary,
           foregroundColor: Colors.black,
           elevation: 0,
-          minimumSize: const Size(80, 80),
+          minimumSize: const Size(AppDimensions.buttonSize, AppDimensions.buttonSize),
           shape: const CircleBorder(),
           padding: const EdgeInsets.all(20),
         ),
@@ -77,9 +78,9 @@ class AppTheme {
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           foregroundColor: AppColors.primary,
-          side: BorderSide(color: AppColors.primary, width: 3),
+          side: const BorderSide(color: AppColors.primary, width: 3),
           elevation: 0,
-          minimumSize: const Size(80, 80),
+          minimumSize: const Size(AppDimensions.buttonSize, AppDimensions.buttonSize),
           shape: const CircleBorder(),
           padding: const EdgeInsets.all(20),
         ),

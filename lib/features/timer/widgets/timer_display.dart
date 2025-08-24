@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import '../../../core/utils/time_formatter.dart';
+import '../../../core/constants/dimensions.dart';
 
 class TimerDisplay extends StatefulWidget {
   final Stopwatch stopwatch;
@@ -41,7 +42,7 @@ class _TimerDisplayState extends State<TimerDisplay> with SingleTickerProviderSt
 
     return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.45,
+      height: MediaQuery.of(context).size.height * AppDimensions.timerDisplayHeightFactor,
       color: Theme.of(context).colorScheme.primary,
       child: Center(
         child: Text(
