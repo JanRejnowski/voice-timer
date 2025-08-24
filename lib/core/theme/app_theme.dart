@@ -20,8 +20,8 @@ class AppTheme {
         centerTitle: true,
         titleTextStyle: TextStyle(
           fontFamily: 'BebasNeue',
-          fontSize: 26,
-          letterSpacing: 3,
+          fontSize: 32,
+          letterSpacing: 4,
           color: AppColors.primary,
           fontWeight: FontWeight.w400,
         ),
