@@ -19,8 +19,8 @@ class AppTheme {
         centerTitle: true,
         titleTextStyle: TextStyle(
           fontFamily: 'BebasNeue',
-          fontSize: 24,
-          letterSpacing: 2,
+          fontSize: 26,
+          letterSpacing: 3,
           color: AppColors.primary,
           fontWeight: FontWeight.w400,
         ),
@@ -29,38 +29,39 @@ class AppTheme {
         // Timer display text style
         displayLarge: TextStyle(
           fontFamily: 'BebasNeue',
-          fontSize: 140,
+          fontSize: 150,
           fontWeight: FontWeight.w400,
           color: Colors.black,
-          letterSpacing: -5,
+          letterSpacing: -3,
           height: 1.0,
         ),
         // App title style
         displayMedium: TextStyle(
           fontFamily: 'BebasNeue',
-          fontSize: 32,
+          fontSize: 36,
           fontWeight: FontWeight.w400,
           color: Colors.white,
-          letterSpacing: 2,
+          letterSpacing: 3,
         ),
         // Button labels
         labelLarge: TextStyle(
           fontFamily: 'BebasNeue',
-          fontSize: 20,
+          fontSize: 22,
           fontWeight: FontWeight.w400,
-          letterSpacing: 1.5,
+          letterSpacing: 2.5,
         ),
         // Voice indicator text
         bodyLarge: TextStyle(
           fontFamily: 'BebasNeue',
-          fontSize: 18,
+          fontSize: 20,
           fontWeight: FontWeight.w400,
-          letterSpacing: 2,
+          letterSpacing: 3,
         ),
         bodyMedium: TextStyle(
           fontFamily: 'BebasNeue',
-          fontSize: 16,
+          fontSize: 18,
           fontWeight: FontWeight.w400,
+          letterSpacing: 2,
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(

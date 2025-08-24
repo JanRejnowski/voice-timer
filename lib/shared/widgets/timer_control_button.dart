@@ -20,21 +20,21 @@ class TimerControlButton extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(
-          width: 100,
-          height: 100,
+          width: 120,
+          height: 120,
           child: filled
               ? ElevatedButton(
                   onPressed: onPressed,
                   child: Icon(
                     icon,
-                    size: 40,
+                    size: 48,
                   ),
                 )
               : OutlinedButton(
                   onPressed: onPressed,
                   child: Icon(
                     icon,
-                    size: 40,
+                    size: 48,
                   ),
                 ),
         ),
