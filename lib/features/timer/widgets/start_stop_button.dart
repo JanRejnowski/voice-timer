@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../shared/widgets/timer_control_button.dart';
+import '../../../core/constants/strings.dart';
+import '../../../shared/widgets/timer_control_button.dart';
 
 class StartStopButton extends StatelessWidget {
   final bool isRunning;
@@ -15,7 +16,7 @@ class StartStopButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TimerControlButton(
       onPressed: onPressed,
-      label: isRunning ? 'STOP' : 'START',
+      label: isRunning ? AppStrings.stop : AppStrings.start,
       icon: isRunning ? Icons.pause : Icons.play_arrow,
       filled: true,
     );

@@ -49,19 +49,33 @@ flutter build ios
 Create a proper separation of concerns with the following structure:
 
 - `lib/features/` - Feature-based organization
-- `lib/shared/` - Shared widgets and utilities
-- `lib/core/` - Core functionality like theme configuration
+  - `lib/features/timer/controllers/` - Timer state management and business logic
+  - `lib/features/timer/pages/` - Timer page UI components
+  - `lib/features/timer/widgets/` - Timer-specific reusable widgets
+- `lib/shared/` - Shared widgets and utilities across features
+- `lib/core/` - Core functionality and configuration
+  - `lib/core/constants/` - Centralized constants (dimensions, strings, colors)
+  - `lib/core/services/` - App services (permissions, audio, etc.)
+  - `lib/core/theme/` - Theme configuration
+  - `lib/core/utils/` - Utility functions and formatters
 
 ### Widget Design Principles
 
 - Create small, composable widgets over large monolithic ones
 - Use flex values in Rows/Columns for responsive design
 - Define theme properties in MaterialApp's theme rather than hardcoding
+- Extract reusable widgets into separate files with clear responsibilities
+- Use constants from `AppDimensions` and `AppStrings` instead of magic numbers/strings
+- Prefer stateless widgets when possible; use controllers for complex state management
 
 ### Code Style
 
 - Use `log` from `dart:developer` for logging (not `print` or `debugPrint`)
 - Follow Flutter's linting rules defined in `analysis_options.yaml`
+- Use constants from `lib/core/constants/` instead of hardcoding dimensions, strings, or colors
+- Extract utility functions to `lib/core/utils/` for reusability
+- Use `ChangeNotifier`-based controllers for state management when `setState` becomes insufficient
+- Import paths should be relative within features, absolute for core/shared dependencies
 
 ## Assets
 

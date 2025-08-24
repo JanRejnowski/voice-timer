@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'timer_display.dart';
-import 'start_stop_button.dart';
-import 'reset_button.dart';
-import 'widgets/voice_status_indicator.dart';
-import 'timer_controller.dart';
+import '../../../core/constants/strings.dart';
+import '../widgets/timer_display.dart';
+import '../widgets/start_stop_button.dart';
+import '../widgets/reset_button.dart';
+import '../widgets/voice_status_indicator.dart';
+import '../controllers/timer_controller.dart';
 
 class TimerPage extends StatefulWidget {
   final bool voiceEnabled;
@@ -39,7 +40,7 @@ class _TimerPageState extends State<TimerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('STOPWATCH'),
+        title: const Text(AppStrings.appBarTitle),
         centerTitle: true,
       ),
       body: Padding(

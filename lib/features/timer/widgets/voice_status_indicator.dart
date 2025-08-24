@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/dimensions.dart';
+import '../../../core/constants/strings.dart';
 
 class VoiceStatusIndicator extends StatelessWidget {
   final bool isEnabled;
@@ -38,7 +39,7 @@ class VoiceStatusIndicator extends StatelessWidget {
           ),
           const SizedBox(width: AppDimensions.spacingMedium),
           Text(
-            isEnabled ? 'Voice Ready' : 'Voice Disabled',
+            isEnabled ? AppStrings.voiceReady : AppStrings.voiceDisabled,
             style: theme.textTheme.bodyMedium?.copyWith(
               color: isEnabled ? primaryColor : disabledColor,
             ),

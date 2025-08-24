@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../shared/widgets/timer_control_button.dart';
+import '../../../core/constants/strings.dart';
+import '../../../shared/widgets/timer_control_button.dart';
 
 class ResetButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -13,7 +14,7 @@ class ResetButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TimerControlButton(
       onPressed: onPressed,
-      label: 'RESET',
+      label: AppStrings.reset,
       icon: Icons.refresh,
       filled: false,
     );

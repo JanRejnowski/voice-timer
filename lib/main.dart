@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'core/theme/app_theme.dart';
-import 'features/timer/timer_page.dart';
+import 'core/constants/strings.dart';
+import 'features/timer/pages/timer_page.dart';
 import 'core/services/permission_service.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Voice Timer',
+      title: AppStrings.appTitle,
       theme: AppTheme.darkTheme,
       home: const PermissionWrapper(),
     );

@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+import '../constants/strings.dart';
 
 class PermissionService {
   static Future<bool> requestVoicePermissions(BuildContext context) async {
@@ -33,20 +34,17 @@ class PermissionService {
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Permissions Required'),
-          content: const Text(
-            'Voice Timer needs microphone and speech recognition permissions to provide hands-free timer control. '
-            'Please enable these permissions in Settings to use voice features.',
-          ),
+          title: const Text(AppStrings.permissionsRequired),
+          content: const Text(AppStrings.permissionsMessage),
           actions: <Widget>[
             TextButton(
-              child: const Text('Cancel'),
+              child: const Text(AppStrings.cancel),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
             TextButton(
-              child: const Text('Open Settings'),
+              child: const Text(AppStrings.openSettings),
               onPressed: () {
                 Navigator.of(context).pop();
                 openAppSettings();

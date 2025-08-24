@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import '../../core/utils/time_formatter.dart';
-import '../../core/constants/dimensions.dart';
+import '../../../core/utils/time_formatter.dart';
+import '../../../core/constants/dimensions.dart';
 
 class TimerDisplay extends StatefulWidget {
   final Stopwatch stopwatch;
