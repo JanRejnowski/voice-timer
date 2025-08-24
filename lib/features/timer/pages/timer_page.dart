@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../core/constants/strings.dart';
 import '../widgets/timer_display.dart';
 import '../widgets/start_stop_button.dart';
 import '../widgets/reset_button.dart';
@@ -40,49 +39,51 @@ class _TimerPageState extends State<TimerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(AppStrings.appBarTitle),
-        centerTitle: true,
+        title: const Text('STOPWATCH'),
+        leading: IconButton(
+          icon: Icon(Icons.settings, color: Theme.of(context).colorScheme.primary),
+          onPressed: () {},
+        ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          children: [
-            Expanded(
-              flex: 3,
-              child: Center(
-                child: TimerDisplay(stopwatch: _timerController.stopwatch),
-              ),
-            ),
-            Expanded(
-              flex: 2,
+      body: Column(
+        children: [
+          // Timer Display Section
+          TimerDisplay(stopwatch: _timerController.stopwatch),
+          
+          // Controls Section
+          Expanded(
+            child: Container(
+              color: Theme.of(context).colorScheme.surface,
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        StartStopButton(
-                          isRunning: _timerController.isRunning,
-                          onPressed: _timerController.toggle,
-                        ),
-                        ResetButton(
-                          onPressed: _timerController.reset,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: Center(
-                      child: VoiceStatusIndicator(
-                        isEnabled: widget.voiceEnabled,
+                  // Buttons Row
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      StartStopButton(
+                        isRunning: _timerController.isRunning,
+                        onPressed: _timerController.toggle,
                       ),
+                      ResetButton(
+                        onPressed: _timerController.reset,
+                      ),
+                    ],
+                  ),
+                  
+                  // Voice Indicator
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 40),
+                    child: VoiceStatusIndicator(
+                      isEnabled: widget.voiceEnabled,
+                      isListening: false,
                     ),
                   ),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

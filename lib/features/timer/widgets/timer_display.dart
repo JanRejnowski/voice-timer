@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import '../../../core/utils/time_formatter.dart';
-import '../../../core/constants/dimensions.dart';
 
 class TimerDisplay extends StatefulWidget {
   final Stopwatch stopwatch;
@@ -42,22 +41,13 @@ class _TimerDisplayState extends State<TimerDisplay> with SingleTickerProviderSt
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(
-        vertical: AppDimensions.spacingXLarge,
-        horizontal: AppDimensions.spacingLarge,
-      ),
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primary,
-        borderRadius: BorderRadius.circular(AppDimensions.borderRadius),
-      ),
-      child: Text(
-        timeString,
-        textAlign: TextAlign.center,
-        style: Theme.of(context).textTheme.displayLarge?.copyWith(
-          fontSize: AppDimensions.timerFontSize,
-          fontWeight: FontWeight.normal,
-          color: Theme.of(context).colorScheme.onPrimary,
-          fontFamily: 'BebasNeue',
+      height: MediaQuery.of(context).size.height * 0.45,
+      color: Theme.of(context).colorScheme.primary,
+      child: Center(
+        child: Text(
+          timeString,
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.displayLarge,
         ),
       ),
     );

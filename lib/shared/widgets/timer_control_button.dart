@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../core/constants/dimensions.dart';
 
 class TimerControlButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -21,44 +20,29 @@ class TimerControlButton extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(
-          width: AppDimensions.buttonSize,
-          height: AppDimensions.buttonSize,
+          width: 100,
+          height: 100,
           child: filled
               ? ElevatedButton(
                   onPressed: onPressed,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Theme.of(context).colorScheme.primary,
-                    foregroundColor: Theme.of(context).colorScheme.onPrimary,
-                    shape: const CircleBorder(),
-                    padding: EdgeInsets.zero,
-                  ),
                   child: Icon(
                     icon,
-                    size: AppDimensions.iconSize,
+                    size: 40,
                   ),
                 )
               : OutlinedButton(
                   onPressed: onPressed,
-                  style: OutlinedButton.styleFrom(
-                    foregroundColor: Theme.of(context).colorScheme.primary,
-                    side: BorderSide(
-                      color: Theme.of(context).colorScheme.primary,
-                      width: AppDimensions.borderWidth,
-                    ),
-                    shape: const CircleBorder(),
-                    padding: EdgeInsets.zero,
-                  ),
                   child: Icon(
                     icon,
-                    size: AppDimensions.iconSize,
+                    size: 40,
                   ),
                 ),
         ),
-        const SizedBox(height: AppDimensions.spacingSmall),
+        const SizedBox(height: 12),
         Text(
-          label,
-          style: Theme.of(context).textTheme.labelMedium?.copyWith(
-            color: Theme.of(context).colorScheme.onSurface,
+          label.toUpperCase(),
+          style: Theme.of(context).textTheme.labelLarge?.copyWith(
+            color: Theme.of(context).colorScheme.primary,
           ),
         ),
       ],

@@ -1,82 +1,86 @@
 import 'package:flutter/material.dart';
+import '../constants/app_colors.dart';
 
 class AppTheme {
-  static const Color primaryColor = Color(0xFF00FF00);
-  static const Color backgroundColor = Color(0xFF121212);
-  static const Color surfaceColor = Color(0xFF1E1E1E);
-  static const Color onSurfaceColor = Color(0xFFFFFFFF);
-  static const Color onPrimaryColor = Color(0xFF000000);
-  
   static ThemeData get darkTheme {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
-      colorScheme: const ColorScheme.dark(
-        primary: primaryColor,
-        onPrimary: onPrimaryColor,
-        surface: surfaceColor,
-        onSurface: onSurfaceColor,
+      colorScheme: ColorScheme.dark(
+        primary: AppColors.primary,
+        onPrimary: Colors.black,
+        surface: AppColors.surface,
+        onSurface: Colors.white,
       ),
-      scaffoldBackgroundColor: backgroundColor,
+      scaffoldBackgroundColor: Colors.black,
+      appBarTheme: AppBarTheme(
+        backgroundColor: AppColors.surface,
+        elevation: 0,
+        centerTitle: true,
+        titleTextStyle: TextStyle(
+          fontFamily: 'BebasNeue',
+          fontSize: 24,
+          letterSpacing: 2,
+          color: AppColors.primary,
+          fontWeight: FontWeight.w400,
+        ),
+      ),
       textTheme: const TextTheme(
+        // Timer display text style
         displayLarge: TextStyle(
           fontFamily: 'BebasNeue',
-          color: onSurfaceColor,
+          fontSize: 140,
+          fontWeight: FontWeight.w400,
+          color: Colors.black,
+          letterSpacing: -5,
+          height: 1.0,
         ),
+        // App title style
         displayMedium: TextStyle(
           fontFamily: 'BebasNeue',
-          color: onSurfaceColor,
+          fontSize: 32,
+          fontWeight: FontWeight.w400,
+          color: Colors.white,
+          letterSpacing: 2,
         ),
-        displaySmall: TextStyle(
+        // Button labels
+        labelLarge: TextStyle(
           fontFamily: 'BebasNeue',
-          color: onSurfaceColor,
+          fontSize: 20,
+          fontWeight: FontWeight.w400,
+          letterSpacing: 1.5,
         ),
-        headlineLarge: TextStyle(
-          fontFamily: 'BebasNeue',
-          color: onSurfaceColor,
-        ),
-        headlineMedium: TextStyle(
-          fontFamily: 'BebasNeue',
-          color: onSurfaceColor,
-        ),
-        headlineSmall: TextStyle(
-          fontFamily: 'BebasNeue',
-          color: onSurfaceColor,
-        ),
-        titleLarge: TextStyle(
-          fontFamily: 'BebasNeue',
-          color: onSurfaceColor,
-        ),
-        titleMedium: TextStyle(
-          fontFamily: 'BebasNeue',
-          color: onSurfaceColor,
-        ),
-        titleSmall: TextStyle(
-          fontFamily: 'BebasNeue',
-          color: onSurfaceColor,
-        ),
+        // Voice indicator text
         bodyLarge: TextStyle(
-          color: onSurfaceColor,
+          fontFamily: 'BebasNeue',
+          fontSize: 18,
+          fontWeight: FontWeight.w400,
+          letterSpacing: 2,
         ),
         bodyMedium: TextStyle(
-          color: onSurfaceColor,
-        ),
-        bodySmall: TextStyle(
-          color: onSurfaceColor,
+          fontFamily: 'BebasNeue',
+          fontSize: 16,
+          fontWeight: FontWeight.w400,
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: primaryColor,
-          foregroundColor: onPrimaryColor,
+          backgroundColor: AppColors.primary,
+          foregroundColor: Colors.black,
+          elevation: 0,
+          minimumSize: const Size(80, 80),
           shape: const CircleBorder(),
+          padding: const EdgeInsets.all(20),
         ),
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-          foregroundColor: primaryColor,
-          side: const BorderSide(color: primaryColor),
+          foregroundColor: AppColors.primary,
+          side: BorderSide(color: AppColors.primary, width: 3),
+          elevation: 0,
+          minimumSize: const Size(80, 80),
           shape: const CircleBorder(),
+          padding: const EdgeInsets.all(20),
         ),
       ),
     );
