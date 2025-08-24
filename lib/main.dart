@@ -35,11 +35,13 @@ class _PermissionWrapperState extends State<PermissionWrapper> {
   @override
   void initState() {
     super.initState();
-    _requestPermissions();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _requestPermissions();
+    });
   }
 
   Future<void> _requestPermissions() async {
-    final granted = await PermissionService.requestVoicePermissions(context);
+    final granted = await PermissionService.requestVoicePermissions();
     setState(() {
       _permissionsGranted = granted;
       _permissionsChecked = true;
